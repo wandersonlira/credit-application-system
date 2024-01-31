@@ -24,5 +24,5 @@ data class Credit(
         var customer: Customer? = null,
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        val id: Long? = null
+        val idCredit: Long? = null
 )

@@ -17,7 +17,7 @@ class CreditService(
 
     override fun save(credit: Credit): Credit {
         credit.apply {
-            customer = customerService.findById(credit.customer?.id!!)
+            customer = customerService.findById(credit.customer?.idCustomer!!)
         }
         return this.creditRepository.save(credit)
     }
@@ -30,6 +30,6 @@ class CreditService(
     override fun findByCreditCode(customerId: Long, creditCode: UUID): Credit {
          val credit: Credit = (this.creditRepository.findByCreditCode(creditCode)
              ?: throw RuntimeException("Credit $creditCode not found"))
-        return if (credit.customer?.id == customerId) credit else throw RuntimeException("Contact admin")
+        return if (credit.customer?.idCustomer == customerId) credit else throw RuntimeException("Contact admin")
     }
 }
