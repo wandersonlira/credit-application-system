@@ -1,15 +1,17 @@
 package com.lira.credit.application.system.dto
 
 import com.lira.credit.application.system.entities.Customer
+import jakarta.validation.constraints.NotEmpty
+import jakarta.validation.constraints.NotNull
 import java.math.BigDecimal
 
 data class CustomerUpdateDTO(
 
-    val firstName: String,
-    val lastName: String,
-    val income: BigDecimal,
-    val zipCode: String,
-    val street: String
+    @field:NotEmpty(message = "ING: Invalid input, PT: Entrada inválida") val firstName: String,
+    @field:NotEmpty(message = "ING: Invalid input, PT: Entrada inválida") val lastName: String,
+    @field:NotNull(message = "ING: Invalid 'null' input, PT: Entrada 'vazio' inválida") val income: BigDecimal,
+    @field:NotEmpty(message = "ING: Invalid input, PT: Entrada inválida") val zipCode: String,
+    @field:NotEmpty(message = "ING: Invalid input, PT: Entrada inválida") val street: String
 ) {
 
     fun toEntity(customer: Customer): Customer {

@@ -2,18 +2,24 @@ package com.lira.credit.application.system.dto
 
 import com.lira.credit.application.system.entities.Customer
 import com.lira.credit.application.system.entities.LocalAddress
+import jakarta.validation.constraints.Email
+import jakarta.validation.constraints.NotEmpty
+import jakarta.validation.constraints.NotNull
+import org.hibernate.validator.constraints.br.CPF
 import java.math.BigDecimal
 
 data class CustomerDTO(
 
-    val firstName: String,
-    val lastName: String,
-    val cpf: String,
-    val income: BigDecimal,
-    val email: String,
-    val password: String,
-    val zipCode: String,
-    val street: String
+    @field:NotEmpty(message = "ING: Invalid input, PT: Entrada inválida") val firstName: String,
+    @field:NotEmpty(message = "ING: Invalid input, PT: Entrada inválida") val lastName: String,
+    @field:NotEmpty(message = "ING: Invalid input, PT: Entrada inválida")
+    @field:CPF(message = "ING: this invalid CPF, PT: CPF inválido") val cpf: String,
+    @field:NotNull(message = "ING: Invalid 'null' input, PT: Entrada 'vazio' inválida") val income: BigDecimal,
+    @field:NotEmpty(message = "ING: Invalid input, PT: Entrada inválida")
+    @field:Email(message = "ING: Invalid input, PT: Entrada inválida") val email: String,
+    @field:NotEmpty(message = "ING: Invalid input, PT: Entrada inválida") val password: String,
+    @field:NotEmpty(message = "ING: Invalid input, PT: Entrada inválida") val zipCode: String,
+    @field:NotEmpty(message = "ING: Invalid input, PT: Entrada inválida") val street: String
 ) {
 
     fun toEntity(): Customer = Customer(
