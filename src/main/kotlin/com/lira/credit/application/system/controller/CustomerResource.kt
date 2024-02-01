@@ -5,6 +5,7 @@ import com.lira.credit.application.system.dto.CustomerUpdateDTO
 import com.lira.credit.application.system.dto.CustomerView
 import com.lira.credit.application.system.entities.Customer
 import com.lira.credit.application.system.service.impl.CustomerService
+import jakarta.validation.Valid
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -17,7 +18,7 @@ class CustomerResource(
 ) {
 
     @PostMapping
-    fun saveCustomer(@RequestBody customerDto: CustomerDTO): ResponseEntity<String> {
+    fun saveCustomer(@RequestBody @Valid customerDto: CustomerDTO): ResponseEntity<String> {
         val savedCustomer = this.customerService.save(customerDto.toEntity())
         return ResponseEntity.status(HttpStatus.CREATED).body("Customer ${savedCustomer.email} saved!")
     }
@@ -31,13 +32,14 @@ class CustomerResource(
 
 
     @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     fun deleteCustomer(@PathVariable id: Long) = this.customerService.deleteById(id)
 
 
     @PatchMapping
     fun updateCustomer(
         @RequestParam(value = "customerId") idCustomer: Long,
-        @RequestBody customerUpdateDTO: CustomerUpdateDTO
+        @RequestBody @Valid customerUpdateDTO: CustomerUpdateDTO
     ): ResponseEntity<CustomerView> {
         val customer: Customer = customerService.findById(idCustomer)
         val customerToUpdate: Customer = customerUpdateDTO.toEntity(customer)
