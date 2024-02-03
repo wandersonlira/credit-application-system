@@ -1,0 +1,6 @@
+2024-02-03 11:01:25.630995-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TAB_CUSTOMER" not found (this database is empty); SQL statement:
+insert into tab_customer (street,zip_code,cpf,email,first_name,income,last_name,password,id_customer) values (?,?,?,?,?,?,?,?,default) [42104-224]
+2024-02-03 11:01:56.926091-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TAB_CUSTOMER" not found (this database is empty); SQL statement:
+insert into tab_customer (street,zip_code,cpf,email,first_name,income,last_name,password,id_customer) values (?,?,?,?,?,?,?,?,default) [42104-224]
