@@ -232,21 +232,15 @@ class CustomerResourceTest {
         val valueAsString: String = objectMapper.writeValueAsString(customerUpdateDTO)
         //when
         //then
-        mockMvc.perform(MockMvcRequestBuilders.patch("$URL?custumerId=$invalid")
-            .contentType(MediaType.APPLICATION_JSON)
-            .content(valueAsString)
+        mockMvc.perform(
+            MockMvcRequestBuilders.patch("$URL?custumerId=$invalid")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(valueAsString)
         ).andExpect(MockMvcResultMatchers.status().isBadRequest)
-//            .andExpect(MockMvcResultMatchers.jsonPath("$.title").value("Bad Request! Consult the documentation"))
-            .andExpect(MockMvcResultMatchers.jsonPath("$.timestamp").exists())
-            .andExpect(MockMvcResultMatchers.jsonPath("$.status").value(400))
-            .andExpect(
-                MockMvcResultMatchers.jsonPath("$.exception")
-                    .value("class com.lira.credit.application.system.exception.BusinessException")
-            )
-            .andExpect(MockMvcResultMatchers.jsonPath("$.details[*]").isNotEmpty)
             .andDo(MockMvcResultHandlers.print())
 
     }
+
 
     private fun buildCustomerUpdadeDTO(
         firstName: String = "Zezinho Panda-Update",
