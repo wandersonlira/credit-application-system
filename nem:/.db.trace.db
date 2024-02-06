@@ -1,0 +1,9 @@
+2024-02-03 11:13:52.994503-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TAB_CUSTOMER" not found (this database is empty); SQL statement:
+insert into tab_customer (street,zip_code,cpf,email,first_name,income,last_name,password,id_customer) values (?,?,?,?,?,?,?,?,default) [42104-224]
+2024-02-03 11:14:26.502960-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-224]
+2024-02-03 11:14:26.518446-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-224]
+2024-02-03 11:14:26.520670-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-224]

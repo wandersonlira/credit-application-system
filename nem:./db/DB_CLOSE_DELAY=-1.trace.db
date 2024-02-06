@@ -1,0 +1,12 @@
+2024-02-05 13:19:17.492139-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TAB_CUSTOMER" not found (this database is empty); SQL statement:
+select c1_0.id_customer,c1_0.street,c1_0.zip_code,c1_0.cpf,c1_0.email,c1_0.first_name,c1_0.income,c1_0.last_name,c1_0.password from tab_customer c1_0 [42104-224]
+2024-02-05 13:19:17.540037-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TAB_CUSTOMER" not found (this database is empty); SQL statement:
+select c1_0.id_customer,c1_0.street,c1_0.zip_code,c1_0.cpf,c1_0.email,c1_0.first_name,c1_0.income,c1_0.last_name,c1_0.password from tab_customer c1_0 [42104-224]
+2024-02-05 13:21:13.646492-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TAB_CUSTOMER" not found (this database is empty); SQL statement:
+select c1_0.id_customer,c1_0.street,c1_0.zip_code,c1_0.cpf,c1_0.email,c1_0.first_name,c1_0.income,c1_0.last_name,c1_0.password from tab_customer c1_0 [42104-224]
+2024-02-05 13:21:13.667725-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TAB_CUSTOMER" not found (this database is empty); SQL statement:
+select c1_0.id_customer,c1_0.street,c1_0.zip_code,c1_0.cpf,c1_0.email,c1_0.first_name,c1_0.income,c1_0.last_name,c1_0.password from tab_customer c1_0 [42104-224]
