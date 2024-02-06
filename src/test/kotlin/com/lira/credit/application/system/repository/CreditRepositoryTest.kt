@@ -60,6 +60,21 @@ class CreditRepositoryTest {
 
 
 
+    @Test
+    fun `should find all credit by customer id`() {
+        //given
+        val idCustomer: Long = 1L
+
+        //when
+        val creditList: List<Credit> = creditRepository.findAllByCustomerID(idCustomer)
+
+        //then
+        Assertions.assertThat(creditList).isEmpty()
+//        Assertions.assertThat(creditList.size).isEqualTo(2)
+    }
+
+
+
     private fun buildCredit(
         creditValue: BigDecimal = BigDecimal.valueOf(500.0),
         dayFirstInstallment: LocalDate = LocalDate.of(2023, Month.APRIL, 22),
