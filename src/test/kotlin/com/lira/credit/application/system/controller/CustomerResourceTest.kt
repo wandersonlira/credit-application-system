@@ -63,7 +63,7 @@ class CustomerResourceTest {
             .andExpect(MockMvcResultMatchers.jsonPath("$.lastName").value("Sentinela"))
             .andExpect(MockMvcResultMatchers.jsonPath("$.cpf").value("74786890863"))
             .andExpect(MockMvcResultMatchers.jsonPath("$.email").value("pandinha@email.com"))
-            .andExpect(MockMvcResultMatchers.jsonPath("$.income").value(400.0))
+            .andExpect(MockMvcResultMatchers.jsonPath("$.income").value(1200.0))
             .andExpect(MockMvcResultMatchers.jsonPath("$.zipCode").value("50030-150"))
             .andExpect(MockMvcResultMatchers.jsonPath("$.street").value("Rua dos pandinhas sentinela"))
             .andDo(MockMvcResultHandlers.print())
@@ -131,7 +131,7 @@ class CustomerResourceTest {
             .andExpect(MockMvcResultMatchers.jsonPath("$.lastName").value("Sentinela"))
             .andExpect(MockMvcResultMatchers.jsonPath("$.cpf").value("74786890863"))
             .andExpect(MockMvcResultMatchers.jsonPath("$.email").value("pandinha@email.com"))
-            .andExpect(MockMvcResultMatchers.jsonPath("$.income").value(400.0))
+            .andExpect(MockMvcResultMatchers.jsonPath("$.income").value(1200.0))
             .andExpect(MockMvcResultMatchers.jsonPath("$.zipCode").value("50030-150"))
             .andExpect(MockMvcResultMatchers.jsonPath("$.street").value("Rua dos pandinhas sentinela"))
             .andDo(MockMvcResultHandlers.print())
@@ -141,7 +141,7 @@ class CustomerResourceTest {
     @Test
     fun `should not find customer whith invalid id and return 400 status`() {
         //given
-        val invalid: Long = 2L
+        val invalid = 2L
         //when
         //then
         mockMvc.perform(
