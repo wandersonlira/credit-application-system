@@ -15,11 +15,12 @@ import io.mockk.verify
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
+import org.springframework.test.context.ActiveProfiles
 import java.math.BigDecimal
 import java.util.*
 
 
-//@ActiveProfiles("test")
+@ActiveProfiles("test")
 @ExtendWith(MockKExtension::class)
 class CustomerServiceTest {
 
@@ -103,30 +104,32 @@ class CustomerServiceTest {
 
     }
 
-    private fun buildCustomer(
-        firstName: String = "Zezinho Panda",
-        lastName: String = "Sentinela",
-        cpf: String = "14328128078",
-        email: String = "panda@email.com",
-        password: String = "pandinha123",
-        zipCode: String = "50030-150",
-        street: String = "Rua dos pandinhas sentinela",
-        income: BigDecimal = BigDecimal.valueOf(1000.0),
-        idCustomer: Long = 1L
+    companion object {
+        fun buildCustomer(
+            firstName: String = "Zezinho Panda",
+            lastName: String = "Sentinela",
+            cpf: String = "14328128078",
+            email: String = "panda@email.com",
+            password: String = "pandinha123",
+            zipCode: String = "50030-150",
+            street: String = "Rua dos pandinhas sentinela",
+            income: BigDecimal = BigDecimal.valueOf(1000.0),
+            idCustomer: Long = 1L
 
-    ) = Customer(
-        firstName = firstName,
-        lastName = lastName,
-        cpf = cpf,
-        email = email,
-        password = password,
-        address = LocalAddress(
-            zipCode = zipCode,
-            street = street
-        ),
-        income = income,
-        idCustomer = idCustomer
-    )
+        ) = Customer(
+            firstName = firstName,
+            lastName = lastName,
+            cpf = cpf,
+            email = email,
+            password = password,
+            address = LocalAddress(
+                zipCode = zipCode,
+                street = street
+            ),
+            income = income,
+            idCustomer = idCustomer
+        )
+    }
 
 
 }
